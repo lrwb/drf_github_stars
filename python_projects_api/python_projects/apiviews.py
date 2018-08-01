@@ -12,7 +12,7 @@ class PythonProjectsList(generics.ListAPIView):
     serializer_class = PythonProjectsSerializer
     filter_backends = (OrderingFilter,)
     ordering_fields = ('stars', 'repo_name', 'creation_time', 'last_push_time')
-    ordering = ('stars',)
+    ordering = ('-stars',)
 
 class PythonProjectsDetail(generics.RetrieveAPIView):
     queryset = PythonProjects.objects.all()
