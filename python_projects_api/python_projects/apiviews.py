@@ -5,11 +5,11 @@ from rest_framework.response import Response
 
 from .ingest import get_github_python_stars
 from .models import PythonProjects
-from .serializers import PythonProjectsSerializer
+from .serializers import PythonProjectsSerializer, PythonProjectsListSerializer
 
 class PythonProjectsList(generics.ListAPIView):
     queryset = PythonProjects.objects.all()
-    serializer_class = PythonProjectsSerializer
+    serializer_class = PythonProjectsListSerializer
     filter_backends = (OrderingFilter,)
     ordering_fields = ('stars', 'repo_name', 'creation_time', 'last_push_time')
     ordering = ('-stars',)

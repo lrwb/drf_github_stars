@@ -3,7 +3,6 @@ from rest_framework import serializers
 from .models import PythonProjects
 
 class PythonProjectsSerializer(serializers.ModelSerializer):
-
     def update_or_create_python_projects(self, item):
         updates={'repo_name': item.get('repo_name', None),
                  'url': item.get('url', None),
@@ -29,3 +28,12 @@ class PythonProjectsSerializer(serializers.ModelSerializer):
     class Meta:
         model = PythonProjects
         fields = '__all__'
+
+class PythonProjectsListSerializer(PythonProjectsSerializer):
+    def to_representation(self, instance):
+        representation = {
+            'id': instance.id,
+            'repo_name': instance.repo_name,
+            'description': instance.description,
+        }
+        return representation
