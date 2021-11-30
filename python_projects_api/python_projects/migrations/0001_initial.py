@@ -7,21 +7,28 @@ class Migration(migrations.Migration):
 
     initial = True
 
-    dependencies = [
-    ]
+    dependencies = []
 
     operations = [
         migrations.CreateModel(
-            name='PythonProjects',
+            name="PythonProjects",
             fields=[
-                ('id', models.AutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
-                ('repo_name', models.CharField(max_length=100)),
-                ('repo_id', models.IntegerField(unique=True)),
-                ('url', models.URLField(max_length=256)),
-                ('creation_time', models.DateTimeField()),
-                ('last_push_time', models.DateTimeField()),
-                ('description', models.CharField(blank=True, max_length=512)),
-                ('stars', models.PositiveIntegerField(verbose_name=0)),
+                (
+                    "id",
+                    models.AutoField(
+                        auto_created=True,
+                        primary_key=True,
+                        serialize=False,
+                        verbose_name="ID",
+                    ),
+                ),
+                ("repo_name", models.CharField(max_length=100)),
+                ("repo_id", models.IntegerField(unique=True)),
+                ("url", models.URLField(max_length=256)),
+                ("creation_time", models.DateTimeField()),
+                ("last_push_time", models.DateTimeField()),
+                ("description", models.CharField(blank=True, max_length=512)),
+                ("stars", models.PositiveIntegerField(verbose_name=0)),
             ],
         ),
     ]

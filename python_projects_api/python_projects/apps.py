@@ -2,4 +2,4 @@ from django.apps import AppConfig
 
 
 class PythonProjectsConfig(AppConfig):
-    name = 'python_projects'
+    name = "python_projects"
