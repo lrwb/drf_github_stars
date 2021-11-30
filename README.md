@@ -2,22 +2,21 @@
 =================================
 * Python >= 3.6 
 * sqlite
+* poetry
 
 # Setup
-1.  Create a virtual environment.
-    * `$ python3.6 -m venv env3`
-2.  Activate the virtual environemnt.
-    * `$ source env3/bin/activate`
-3.  Upgrade pip installation.
-    * `$ pip install --upgrade pip`
-4.  Install python packages via pip.
-    * `$ pip install -r requirements.txt`
-5.  Move into the django project directory.
+1.  Move into the django project directory.
     * `$ cd python_projects_api`
 6.  Execute django database migrations.
     * `$ python manage.py migrate`
 7.  Start the django_restframework server.
-    * `$ python manage.py runserver`
+    * `$ poetry run python manage.py runserver`
+    * Visit update endpoint first:
+        * localhost:8000/projects/update
+        * Issue a PUT request
+    * Visit either of the following endpoints:
+        * localhost:8000/projects
+        * localhost:8000/projects/<id>
 
 # Endpoint Descriptions
 There are three endpoints associated with this application.
