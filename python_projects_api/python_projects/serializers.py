@@ -13,7 +13,7 @@ class PythonProjectsSerializer(serializers.ModelSerializer):
             "description": item.get("description", "Alpha"),
             "stars": item.get("stars", 0),
         }
-        project, created = PythonProjects.objects.update_or_create(
+        project, _ = PythonProjects.objects.update_or_create(
             repo_id=item.get("repo_id", None), defaults=updates
         )
         return project

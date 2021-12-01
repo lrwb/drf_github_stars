@@ -1,5 +1,4 @@
 from django.db import models
-from django.contrib.auth.models import User
 
 
 class PythonProjects(models.Model):
@@ -13,7 +12,10 @@ class PythonProjects(models.Model):
 
     def __str__(self):
         return (
-            f"<PythonProjects(repo_name='{self.repo_name}', repo_id='{self.repo_id}', url='{self.url}', "
-            f"creation_time='{self.creation_time}', last_push_time='{self.last_push_time}', description='{self.description}', "
+            f"<PythonProjects(repo_name='{self.repo_name}', "
+            f"repo_id='{self.repo_id}', url='{self.url}', "
+            f"creation_time='{self.creation_time}', "
+            f"last_push_time='{self.last_push_time}', "
+            f"description='{self.description}', "
             f"stars='{self.stars}')>\n"
         )
